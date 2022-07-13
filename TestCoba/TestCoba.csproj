@@ -1,0 +1,791 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{764AFC31-816F-4F7F-94E4-5AA591E4E4E1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestCoba</RootNamespace>
+    <AssemblyName>TestCoba</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+      </Objects>
+    </PublishDatabaseSettings>
+    <IncludeIisSettings>true</IncludeIisSettings>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.10.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.10\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CRVsPackageLib, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CRVsPackageLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.CrystalReports.Design.dll</HintPath>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.CrystalReports.TemplateEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Data.AdoDotNetInterop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Enterprise.Viewing.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.ClientDoc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.CommLayer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.CommonControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.CommonObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.Controllers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.CubeDefModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.DataDefModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataSetConversion, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.DataSetConversion.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.ObjectFactory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Prompting, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.Prompting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.ReportDefModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.XmlSerialize, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportAppServer.XmlSerialize.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Windows.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DayPilot, Version=5.0.303.0, Culture=neutral, PublicKeyToken=ce5d34538e20ef65, processorArchitecture=MSIL">
+      <HintPath>..\packages\DayPilot.5.0.303\lib\DayPilot.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hangfire.AspNet, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.AspNet.0.2.0\lib\net45\Hangfire.AspNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.7.23.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.7.23\lib\net45\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.7.23.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.7.23\lib\net45\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.4.2\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Enterprise.AspNetHelper">
+      <HintPath>..\..\..\Microsoft.VisualStudio.Enterprise.AspNetHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.Viewer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\SAPBusinessObjects.WPF.Viewer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\SAPBusinessObjects.WPF.ViewerShared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\ShockwaveFlashObjects.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".well-known\pki-validation\2848FFB7AD666B9CC975BDD7412B4EE4.txt" />
+    <Content Include="404.aspx" />
+    <Content Include="AddBarangOlahan.aspx" />
+    <Content Include="AddBiayaPage.aspx" />
+    <Content Include="AddCustomerPage.aspx" />
+    <Content Include="AddEmployeePage.aspx" />
+    <Content Include="AddInventoryPage.aspx" />
+    <Content Include="AddItemPage.aspx" />
+    <Content Include="AddPembelianPage.aspx" />
+    <Content Include="AddPenjualanPage.aspx" />
+    <Content Include="AddSupplierPage.aspx" />
+    <Content Include="assets\fonts\fa-solid-900.eot" />
+    <Content Include="assets\fonts\fa-solid-900.ttf" />
+    <Content Include="assets\fonts\fa-solid-900.woff" />
+    <Content Include="assets\fonts\fa-solid-900.woff2" />
+    <Content Include="assets\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="assets\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="assets\images\1612338490479.png" />
+    <Content Include="assets\images\avatars\13.jpg" />
+    <Content Include="BayarCicilan.aspx" />
+    <Content Include="BiayaPage.aspx" />
+    <Content Include="css\main.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\util.css" />
+    <Content Include="CustomerPage.aspx" />
+    <Content Include="EmployeePage.aspx" />
+    <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="HargaModalPage.aspx" />
+    <Content Include="images\icons\favicon.ico" />
+    <Content Include="images\northwindlogo.gif" />
+    <Content Include="InventoryPage.aspx" />
+    <Content Include="ItemPage.aspx" />
+    <Content Include="js\main.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="NeracaPage.aspx" />
+    <Content Include="NeracaTransaksi.aspx" />
+    <Content Include="PembelianPage.aspx" />
+    <Content Include="PenjualanPage.aspx" />
+    <Content Include="photos\1.jpg" />
+    <Content Include="photos\2.jpg" />
+    <Content Include="photos\3.jpg" />
+    <Content Include="photos\4.jpg" />
+    <Content Include="photos\5.jpg" />
+    <Content Include="photos\6.jpg" />
+    <Content Include="photos\7.jpg" />
+    <Content Include="photos\8.jpg" />
+    <Content Include="photos\9.jpg" />
+    <Content Include="SchedulePage.aspx" />
+    <Content Include="PDFs\Pembelian_20201020_INV-46382XXXIV.pdf" />
+    <Content Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </Content>
+    <None Include="Properties\PublishProfiles\TestCoba-dev-as - FTP1.pubxml" />
+    <None Include="Properties\PublishProfiles\TestCoba-dev-as - ReadOnly - FTP1.pubxml" />
+    <None Include="Properties\PublishProfiles\TestCoba-dev-as - Web Deploy2.pubxml" />
+    <None Include="Properties\PublishProfiles\YogaMandiri.pubxml" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\excanvas.js" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.2.min.js" />
+    <Content Include="StockOpnamePage.aspx" />
+    <Content Include="SupplierPage.aspx" />
+    <Content Include="UpdateStockOpname.aspx" />
+    <Content Include="vendor\animate\animate.css" />
+    <Content Include="vendor\animsition\css\animsition.css" />
+    <Content Include="vendor\animsition\css\animsition.min.css" />
+    <Content Include="vendor\animsition\js\animsition.js" />
+    <Content Include="vendor\animsition\js\animsition.min.js" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\bootstrap\js\popper.js" />
+    <Content Include="vendor\bootstrap\js\popper.min.js" />
+    <Content Include="vendor\bootstrap\js\tooltip.js" />
+    <Content Include="vendor\countdowntime\countdowntime.js" />
+    <Content Include="vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="vendor\daterangepicker\moment.js" />
+    <Content Include="vendor\daterangepicker\moment.min.js" />
+    <Content Include="vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="vendor\select2\select2.css" />
+    <Content Include="vendor\select2\select2.js" />
+    <Content Include="vendor\select2\select2.min.css" />
+    <Content Include="vendor\select2\select2.min.js" />
+    <Content Include="ViewBarangPage.aspx" />
+    <Content Include="ViewDetailBiaya.aspx" />
+    <Content Include="ViewPembelianPage.aspx" />
+    <Content Include="ViewPenjualanPage.aspx" />
+    <Content Include="Visitor.Master" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Test.mdf" />
+    <Content Include="App_Data\Test_log.ldf">
+      <DependentUpon>Test.mdf</DependentUpon>
+    </Content>
+    <Content Include="assets\fonts\fa-solid-900.svg" />
+    <Content Include="assets\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="assets\images\avatars\1.jpg" />
+    <Content Include="assets\images\avatars\10.jpg" />
+    <Content Include="assets\images\avatars\11.jpg" />
+    <Content Include="assets\images\avatars\12.jpg" />
+    <Content Include="assets\images\avatars\2.jpg" />
+    <Content Include="assets\images\avatars\3.jpg" />
+    <Content Include="assets\images\avatars\4.jpg" />
+    <Content Include="assets\images\avatars\5.jpg" />
+    <Content Include="assets\images\avatars\8.jpg" />
+    <Content Include="assets\images\avatars\9.jpg" />
+    <Content Include="assets\images\logo-inverse.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\scripts\main.js" />
+    <Content Include="index.aspx" />
+    <Content Include="main.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddBarangOlahan.aspx.cs">
+      <DependentUpon>AddBarangOlahan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddBarangOlahan.aspx.designer.cs">
+      <DependentUpon>AddBarangOlahan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddBiayaPage.aspx.cs">
+      <DependentUpon>AddBiayaPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddBiayaPage.aspx.designer.cs">
+      <DependentUpon>AddBiayaPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddCustomerPage.aspx.cs">
+      <DependentUpon>AddCustomerPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCustomerPage.aspx.designer.cs">
+      <DependentUpon>AddCustomerPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEmployeePage.aspx.cs">
+      <DependentUpon>AddEmployeePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEmployeePage.aspx.designer.cs">
+      <DependentUpon>AddEmployeePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddInventoryPage.aspx.cs">
+      <DependentUpon>AddInventoryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddInventoryPage.aspx.designer.cs">
+      <DependentUpon>AddInventoryPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddItemPage.aspx.cs">
+      <DependentUpon>AddItemPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddItemPage.aspx.designer.cs">
+      <DependentUpon>AddItemPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddPembelianPage.aspx.cs">
+      <DependentUpon>AddPembelianPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPembelianPage.aspx.designer.cs">
+      <DependentUpon>AddPembelianPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddPenjualanPage.aspx.cs">
+      <DependentUpon>AddPenjualanPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPenjualanPage.aspx.designer.cs">
+      <DependentUpon>AddPenjualanPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddSupplierPage.aspx.cs">
+      <DependentUpon>AddSupplierPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddSupplierPage.aspx.designer.cs">
+      <DependentUpon>AddSupplierPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationPreload.cs" />
+    <Compile Include="Barang.cs" />
+    <Compile Include="BayarCicilan.aspx.cs">
+      <DependentUpon>BayarCicilan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BayarCicilan.aspx.designer.cs">
+      <DependentUpon>BayarCicilan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BiayaDtl.cs" />
+    <Compile Include="BiayaMst.cs" />
+    <Compile Include="BiayaPage.aspx.cs">
+      <DependentUpon>BiayaPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BiayaPage.aspx.designer.cs">
+      <DependentUpon>BiayaPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cicilan.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerPage.aspx.cs">
+      <DependentUpon>CustomerPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPage.aspx.designer.cs">
+      <DependentUpon>CustomerPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeePage.aspx.cs">
+      <DependentUpon>EmployeePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeePage.aspx.designer.cs">
+      <DependentUpon>EmployeePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HangfireBootstrapper .cs" />
+    <Compile Include="HargaModalPage.aspx.cs">
+      <DependentUpon>HargaModalPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HargaModalPage.aspx.designer.cs">
+      <DependentUpon>HargaModalPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.cs" />
+    <Compile Include="InventoryPage.aspx.cs">
+      <DependentUpon>InventoryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InventoryPage.aspx.designer.cs">
+      <DependentUpon>InventoryPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ItemPage.aspx.cs">
+      <DependentUpon>ItemPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ItemPage.aspx.designer.cs">
+      <DependentUpon>ItemPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ITextEventNrc.cs" />
+    <Compile Include="ITextEvents.cs" />
+    <Compile Include="ITextEventsPnj.cs" />
+    <Compile Include="ITextEventsRekapPnj.cs" />
+    <Compile Include="ITextEventStock.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Neraca.cs" />
+    <Compile Include="NeracaPage.aspx.cs">
+      <DependentUpon>NeracaPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NeracaPage.aspx.designer.cs">
+      <DependentUpon>NeracaPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NeracaTransaksi.aspx.cs">
+      <DependentUpon>NeracaTransaksi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NeracaTransaksi.aspx.designer.cs">
+      <DependentUpon>NeracaTransaksi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PembelianDtl.cs" />
+    <Compile Include="PembelianMst.cs" />
+    <Compile Include="PembelianPage.aspx.cs">
+      <DependentUpon>PembelianPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PembelianPage.aspx.designer.cs">
+      <DependentUpon>PembelianPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PenjualanDtl.cs" />
+    <Compile Include="PenjualanMst.cs" />
+    <Compile Include="PenjualanPage.aspx.cs">
+      <DependentUpon>PenjualanPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PenjualanPage.aspx.designer.cs">
+      <DependentUpon>PenjualanPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="SchedulePage.aspx.cs">
+      <DependentUpon>SchedulePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SchedulePage.aspx.designer.cs">
+      <DependentUpon>SchedulePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StockOpnamePage.aspx.cs">
+      <DependentUpon>StockOpnamePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StockOpnamePage.aspx.designer.cs">
+      <DependentUpon>StockOpnamePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs" />
+    <Compile Include="SupplierPage.aspx.cs">
+      <DependentUpon>SupplierPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SupplierPage.aspx.designer.cs">
+      <DependentUpon>SupplierPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStockOpname.aspx.cs">
+      <DependentUpon>UpdateStockOpname.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateStockOpname.aspx.designer.cs">
+      <DependentUpon>UpdateStockOpname.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBarangPage.aspx.cs">
+      <DependentUpon>ViewBarangPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewBarangPage.aspx.designer.cs">
+      <DependentUpon>ViewBarangPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDetailBiaya.aspx.cs">
+      <DependentUpon>ViewDetailBiaya.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewDetailBiaya.aspx.designer.cs">
+      <DependentUpon>ViewDetailBiaya.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPembelianPage.aspx.cs">
+      <DependentUpon>ViewPembelianPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPembelianPage.aspx.designer.cs">
+      <DependentUpon>ViewPembelianPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPenjualanPage.aspx.cs">
+      <DependentUpon>ViewPenjualanPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPenjualanPage.aspx.designer.cs">
+      <DependentUpon>ViewPenjualanPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Visitor.Master.cs">
+      <DependentUpon>Visitor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Visitor.Master.designer.cs">
+      <DependentUpon>Visitor.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WEFDebug">
+      <Guid>{791D33D0-2AC2-4428-9365-305B9FF204B3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1951</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44300/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
